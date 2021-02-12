@@ -10,26 +10,17 @@ function Calc() {
   let formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
-
-    // These options are needed to round to whole numbers if that's what you want.
-    //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
-    //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
   });
   let formatterSek = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "SEK",
-
-    // These options are needed to round to whole numbers if that's what you want.
-    //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
-    //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
   });
 
+  let sekPrice = 8.31;
+
   return (
-    <div>
+    <div className="container">
       <div className="Input">
-        <label for="input" class="Input-label">
-          Yer Coins mate
-        </label>
         <input
           id="input"
           className="Input-text"
@@ -40,31 +31,49 @@ function Calc() {
         />
       </div>
 
-      <div className='numbers'>
-        <h1>
-          $100k = {formatter.format(btcAmount * 100000)} /{" "}
-          {formatterSek.format(btcAmount * (100000 * 8.31))}
-        </h1>
-        <h1>
-          $200k = {formatter.format(btcAmount * 200000)} /{" "}
-          {formatterSek.format(btcAmount * (200000 * 8.31))}
-        </h1>
-        <h1>
-          $500k = {formatter.format(btcAmount * 500000)} /{" "}
-          {formatterSek.format(btcAmount * (500000 * 8.31))}
-        </h1>
-        <h1>
-          $1m = {formatter.format(btcAmount * 1000000)} /{" "}
-          {formatterSek.format(btcAmount * (1000000 * 8.31))}
-        </h1>
-        <h1>
-          $5m = {formatter.format(btcAmount * 5000000)} /{" "}
-          {formatterSek.format(btcAmount * (5000000 * 8.31))}
-        </h1>
-        <h1>
-          $10m = {formatter.format(btcAmount * 10000000)} /{" "}
-          {formatterSek.format(btcAmount * (10000000 * 8.31))}
-        </h1>
+      <div className="numbers">
+        <div className="numb">
+          <h1>
+            $100k = {formatter.format(btcAmount * 100000)} /{" "}
+            {formatterSek.format(btcAmount * (100000 * sekPrice))}
+          </h1>
+        </div>
+        <div className="numb">
+          <h1>
+            $200k = {formatter.format(btcAmount * 200000)} /{" "}
+            {formatterSek.format(btcAmount * (200000 * sekPrice))}
+          </h1>
+        </div>
+        <div className="numb">
+          <h1>
+            $300k = {formatter.format(btcAmount * 300000)} /{" "}
+            {formatterSek.format(btcAmount * (300000 * sekPrice))}
+          </h1>
+        </div>
+        <div className="numb">
+          <h1>
+            $500k = {formatter.format(btcAmount * 500000)} /{" "}
+            {formatterSek.format(btcAmount * (500000 * sekPrice))}
+          </h1>
+        </div>
+        <div className="numb">
+          <h1>
+            $1m = {formatter.format(btcAmount * 1000000)} /{" "}
+            {formatterSek.format(btcAmount * (1000000 * sekPrice))}
+          </h1>
+        </div>
+        <div className="numb">
+          <h1>
+            $5m = {formatter.format(btcAmount * 5000000)} /{" "}
+            {formatterSek.format(btcAmount * (5000000 * sekPrice))}
+          </h1>
+        </div>
+        <div className="numb">
+          <h1>
+            $10m = {formatter.format(btcAmount * 10000000)} /{" "}
+            {formatterSek.format(btcAmount * (10000000 * sekPrice))}
+          </h1>
+        </div>
       </div>
     </div>
   );
