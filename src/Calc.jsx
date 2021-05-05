@@ -16,7 +16,7 @@ function Calc() {
     currency: "SEK",
   });
 
-  let sekPrice = 8.31;
+  let sekPrice = 8.62;
 
   return (
     <div className="container">
@@ -52,6 +52,12 @@ function Calc() {
         </div>
         <div className="numb">
           <h1>
+            $400k = {formatter.format(btcAmount * 400000)} /{" "}
+            {formatterSek.format(btcAmount * (400000 * sekPrice))}
+          </h1>
+        </div>
+        <div className="numb">
+          <h1>
             $500k = {formatter.format(btcAmount * 500000)} /{" "}
             {formatterSek.format(btcAmount * (500000 * sekPrice))}
           </h1>
@@ -72,6 +78,18 @@ function Calc() {
           <h1>
             $10m = {formatter.format(btcAmount * 10000000)} /{" "}
             {formatterSek.format(btcAmount * (10000000 * sekPrice))}
+          </h1>
+        </div>
+        <div className="numb">
+          <h1>
+            $50m = {formatter.format(btcAmount * 50000000)} /{" "}
+            {formatterSek.format(btcAmount * (50000000 * sekPrice))}
+          </h1>
+        </div>
+        <div className="numb">
+          <h1>
+            $100m = {formatter.format(btcAmount * 100000000)} /{" "}
+            {formatterSek.format(btcAmount * (100000000 * sekPrice))}
           </h1>
         </div>
       </div>
